@@ -2,6 +2,7 @@ package com.jiesong.myapplicationlist;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<AppInfo> appList = new ArrayList<AppInfo>();
     private Button btn_app;
+    private Button btn_list;
     HashMap<String , String> map;
     HashMap<String , String> reflectMap;
     @Override
@@ -47,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
         reflectMap.put("Hello语音交友" , "hello语音交友");
         reflectMap.put("超级WiFi" , "超级wifi");
         reflectMap.put("爱贷网理财" , "爱贷网");
+        reflectMap.put("有个表情" , "表情me");
         btn_app = findViewById(R.id.btn_app);
+        btn_list = findViewById(R.id.btn_list);
         btn_app.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +60,13 @@ public class MainActivity extends AppCompatActivity {
                 for(int i = 0;i < appList.size();i++){
                     Log.e("songjie" , "appName = " + appList.get(i).appName + "              packageName = " + appList.get(i).pkgName);
                 }
+            }
+        });
+        btn_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this , AppListActivity.class);
+                startActivity(intent);
             }
         });
 //        String name = getChannelName(this , "com.qiyi.video");
