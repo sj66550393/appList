@@ -18,5 +18,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="app列表"/>
+    <Button
+        android:id="@+id/btn_usb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="usb调试状态"/>
 
 </LinearLayout>

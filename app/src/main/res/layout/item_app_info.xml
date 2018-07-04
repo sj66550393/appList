@@ -23,5 +23,39 @@
             android:layout_marginLeft="12dp"
             android:singleLine="true"
             />
+        <TextView
+            android:id="@+id/tv_package_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_app_icon"
+            android:layout_below="@+id/tv_app_name"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:singleLine="true"
+            />
+        <Button
+            android:id="@+id/btn_disable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:singleLine="true"
+            android:text="冷藏"
+            />
+        <Button
+            android:id="@+id/btn_enable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btn_disable"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:singleLine="true"
+            android:text="解冻"
+            />
+
     </RelativeLayout>
 </LinearLayout>

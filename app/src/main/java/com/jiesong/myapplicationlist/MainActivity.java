@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,6 +23,7 @@ import java.io.PrintStream;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -30,12 +32,15 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<AppInfo> appList = new ArrayList<AppInfo>();
     private Button btn_app;
     private Button btn_list;
+    private Button btn_usb;
     HashMap<String , String> map;
     HashMap<String , String> reflectMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        SystemManager.execRootCmdSilent("chmod 777 " + pkgCodePath);
+//        Runtime.getRuntime().exec(new String[]{"/system/bin/su","-c", cmd});
         map = new HashMap<>();
         reflectMap = new HashMap<>();
         reflectMap.put("管家金服投资理财", "管家金服");
@@ -47,11 +52,15 @@ public class MainActivity extends AppCompatActivity {
         reflectMap.put("酷狗直播" , "繁星直播");
         reflectMap.put("长龙捕鱼" , "辰龙捕鱼");
         reflectMap.put("Hello语音交友" , "hello语音交友");
+        reflectMap.put("Hello语音交友" , "Hello语音交友1");
         reflectMap.put("超级WiFi" , "超级wifi");
         reflectMap.put("爱贷网理财" , "爱贷网");
         reflectMap.put("有个表情" , "表情me");
+        reflectMap.put("双开小助手" , "微信双开助手");
+        reflectMap.put("超级拼拼乐" , "超级诈金花");
         btn_app = findViewById(R.id.btn_app);
         btn_list = findViewById(R.id.btn_list);
+        btn_usb = findViewById(R.id.btn_usb);
         btn_app.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,10 +78,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        String name = getChannelName(this , "com.qiyi.video");
-//        if(name != null) {
-//            Log.e("songjie", name);
-//        }
+        btn_usb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean enableAdb = (Settings.Secure.getInt(getContentResolver(), Settings.Secure.ADB_ENABLED, 0) > 0);
+                if(enableAdb){
+                    Toast.makeText(MainActivity.this, "usb enable", Toast.LENGTH_LONG).show();
+                }else {
+                    Toast.makeText(MainActivity.this, "not enable", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     /**

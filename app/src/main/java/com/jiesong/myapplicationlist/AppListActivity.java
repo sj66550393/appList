@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -89,18 +90,34 @@ public class AppListActivity extends AppCompatActivity {
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
             ViewHolder mViewHolder;
-            AppInfo appInfo = appInfos.get(i);
+            final AppInfo appInfo = appInfos.get(i);
             if (view == null) {
                 mViewHolder = new ViewHolder();
                 view = LayoutInflater.from(getBaseContext()).inflate(R.layout.item_app_info, null);
                 mViewHolder.iv_app_icon = (ImageView) view.findViewById(R.id.iv_app_icon);
                 mViewHolder.tx_app_name = (TextView) view.findViewById(R.id.tv_app_name);
+                mViewHolder.tv_package_name = view.findViewById(R.id.tv_package_name);
+                mViewHolder.btn_disable = view.findViewById(R.id.btn_disable);
+                mViewHolder.btn_enable = view.findViewById(R.id.btn_enable);
                 view.setTag(mViewHolder);
             } else {
                 mViewHolder = (ViewHolder) view.getTag();
             }
             mViewHolder.iv_app_icon.setImageDrawable(appInfo.getAppIcon());
             mViewHolder.tx_app_name.setText(appInfo.getAppName());
+            mViewHolder.tv_package_name.setText(appInfo.getPkgName());
+            mViewHolder.btn_disable.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    SystemManager.execRootCmdSilent("pm disable " + appInfo.pkgName);
+                }
+            });
+            mViewHolder.btn_enable.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    SystemManager.execRootCmdSilent("pm enable " + appInfo.getPkgName());
+                }
+            });
             return view;
         }
 
@@ -108,6 +125,9 @@ public class AppListActivity extends AppCompatActivity {
 
             ImageView iv_app_icon;
             TextView tx_app_name;
+            TextView tv_package_name;
+            Button btn_disable;
+            Button btn_enable;
         }
     }
 
