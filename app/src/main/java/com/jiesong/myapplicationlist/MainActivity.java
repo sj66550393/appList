@@ -58,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
         reflectMap.put("有个表情" , "表情me");
         reflectMap.put("双开小助手" , "微信双开助手");
         reflectMap.put("超级拼拼乐" , "超级诈金花");
+        reflectMap.put("赚客-手机赚钱" , "赚客");
+        reflectMap.put("双开小助手" , "微信双开助手");
+        reflectMap.put("德国自驾购物" , "德国自驾游-次日签到价格更高");
+
         btn_app = findViewById(R.id.btn_app);
         btn_list = findViewById(R.id.btn_list);
         btn_usb = findViewById(R.id.btn_usb);
