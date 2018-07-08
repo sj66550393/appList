@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         reflectMap.put("赚客-手机赚钱" , "赚客");
         reflectMap.put("双开小助手" , "微信双开助手");
         reflectMap.put("德国自驾购物" , "德国自驾游-次日签到价格更高");
+        reflectMap.put("360手机卫士" , "360手机安全卫士");
 
         btn_app = findViewById(R.id.btn_app);
         btn_list = findViewById(R.id.btn_list);
