@@ -52,16 +52,15 @@ public class MainActivity extends AppCompatActivity {
         reflectMap.put("酷狗直播" , "繁星直播");
         reflectMap.put("长龙捕鱼" , "辰龙捕鱼");
         reflectMap.put("Hello语音交友" , "hello语音交友");
-        reflectMap.put("Hello语音交友" , "Hello语音交友1");
         reflectMap.put("超级WiFi" , "超级wifi");
         reflectMap.put("爱贷网理财" , "爱贷网");
         reflectMap.put("有个表情" , "表情me");
         reflectMap.put("双开小助手" , "微信双开助手");
         reflectMap.put("超级拼拼乐" , "超级诈金花");
         reflectMap.put("赚客-手机赚钱" , "赚客");
-        reflectMap.put("双开小助手" , "微信双开助手");
         reflectMap.put("德国自驾购物" , "德国自驾游-次日签到价格更高");
         reflectMap.put("360手机卫士" , "360手机安全卫士");
+        reflectMap.put("360卫士" , "360手机安全卫士");
 
         btn_app = findViewById(R.id.btn_app);
         btn_list = findViewById(R.id.btn_list);
@@ -115,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 //                info.appIcon = packageInfo.applicationInfo.loadIcon(pm);
 //                // 获取该应用安装包的Intent，用于启动该应用
 //                info.appIntent = pm.getLaunchIntentForPackage(packageInfo.packageName);
-                map.put(info.appName , info.pkgName);
+                map.put(info.appName.trim() , info.pkgName);
                 if(reflectMap.get(info.appName) != null) {
                     map.put(reflectMap.get(info.appName) , info.pkgName);
                 }
@@ -124,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
                 // 系统应用　　　　　　　　
             }
         }
+        map.put("360手机安全卫士" , "com.qihoo360.mobilesafe");
+        map.put("Hello语音交友1" , "com.yy.huanju");
     }
 
     /**
