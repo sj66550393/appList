@@ -126,6 +126,10 @@ public class MainActivity extends AppCompatActivity {
         map.put("园园live" , "sg.bigo.xhalo");
         map.put("搜狐新闻资讯版" , "com.sohu.newsclient");
         map.put("东方航空1" , "com.rytong.ceair");
+        map.put("2345阅读王" , "com.book2345.reader");
+        map.put("荷包理财" , "com.hebao.app");
+        map.put("京东商城" , "com.jingdong.app.mall");
+        map.put("七猫精品小说" ,"com.book2345.reader");
     }
 
     /**
