@@ -59,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
         reflectMap.put("超级拼拼乐" , "超级诈金花");
         reflectMap.put("赚客-手机赚钱" , "赚客");
         reflectMap.put("德国自驾购物" , "德国自驾游-次日签到价格更高");
-        reflectMap.put("360手机卫士" , "360手机安全卫士");
-        reflectMap.put("360卫士" , "360手机安全卫士");
 
         btn_app = findViewById(R.id.btn_app);
         btn_list = findViewById(R.id.btn_list);
@@ -125,6 +123,9 @@ public class MainActivity extends AppCompatActivity {
         }
         map.put("360手机安全卫士" , "com.qihoo360.mobilesafe");
         map.put("Hello语音交友1" , "com.yy.huanju");
+        map.put("园园live" , "sg.bigo.xhalo");
+        map.put("搜狐新闻资讯版" , "com.sohu.newsclient");
+        map.put("东方航空1" , "com.rytong.ceair");
     }
 
     /**
