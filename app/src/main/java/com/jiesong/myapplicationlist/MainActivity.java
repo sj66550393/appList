@@ -131,8 +131,9 @@ public class MainActivity extends AppCompatActivity {
         map.put("京东商城" , "com.jingdong.app.mall");
         map.put("七猫精品小说" ,"com.book2345.reader");
         map.put("B612" , "com.campmobile.snowcamera");
-        com.campmobile.snowcamera
         map.put("予财缘" , "com.gsoc.yucaiyuan");
+        map.put("火山小视频1" , "com.ss.android.ugc.live");
+
     }
 
     /**
