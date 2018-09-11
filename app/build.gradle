@@ -10,9 +10,25 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        release {
+            storeFile file('app_products.keystore')
+            storePassword 'app2016'
+            keyAlias 'app'
+            keyPassword 'app2016'
+            v2SigningEnabled false
+        }
+        debug {
+            storeFile file('debug.keystore')
+        }
+    }
+
+
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
